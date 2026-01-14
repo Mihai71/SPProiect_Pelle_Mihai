@@ -1,0 +1,1 @@
+rootProject.name = "SPProiect_Pelle_Mihai"
