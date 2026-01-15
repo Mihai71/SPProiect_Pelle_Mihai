@@ -1,6 +1,8 @@
 package ro.uvt.entity;
 
 import jakarta.persistence.*;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 public class Product {
@@ -13,6 +15,9 @@ public class Product {
     private String category;
     private double price;
     private int stock;
+    @ManyToOne
+    @JoinColumn(name = "supplier_id")
+    private Supplier supplier;
 
     // Constructor gol necesar pentru JPA
     public Product() {}
@@ -60,4 +65,13 @@ public class Product {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+
 }
